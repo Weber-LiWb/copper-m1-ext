@@ -1,4 +1,5 @@
 import { CheckIcon, XIcon } from "lucide-react";
+import { HouseholdCalculator } from "@/components/copper/household-calculator";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -6,6 +7,7 @@ import {
   formatNotesHours,
   formatUsd,
   getPlans,
+  getProducts,
 } from "@/lib/copper/catalog";
 import { cn } from "@/lib/utils";
 
@@ -101,6 +103,8 @@ export function PlusPricing() {
             );
           })}
         </div>
+
+        <HouseholdCalculator products={getProducts()} plans={plans} />
       </div>
     </section>
   );
